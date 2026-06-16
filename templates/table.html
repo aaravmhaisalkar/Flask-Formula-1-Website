@@ -1,0 +1,22 @@
+{% extends "main.html" %}
+{% block content %}
+<h2>Looking at: 2025 {{track}} Grand Prix</h2>
+<table>
+  <tr>
+    <th>Driver</th>
+    <th>Position</th>
+    <th>Gap To Leader</th>
+    <th>Points</th>
+  </tr>
+  {%for value in standings%}
+  <tr>
+    <td>{{value[0]}}</td>
+    <td>{{value[1]}}</td>
+    <td>{{value[2]}}</td>
+    <td>{{value[3]}}</td>
+  </tr>
+  {%endfor%}
+</table>
+<p>No Gap Time indicates DNF.</p>
+<p>Some drivers may not appear if they didn't start the race or encountered an accident.</p>
+{% endblock %}

@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 10px;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    color: brown;
+    text-align: center;
+    padding: 10px;
+    border: 2px #eee solid;
+}
+
+table, th,td {
+    border: 1px solid;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 7px;
+}
+
+p {
+    color: rgb(233, 81, 81);
+    font-weight: bold;
+    font-size: small;
+}
+
+input[type="submit"] {
+    background-color: rgb(145, 250, 178);
+    border: 1.5px solid;
+    text-align: center;
+    font-size: medium;
+    width: 75px;
+    height: 25px;
+    border-radius: 15px;
+}
+
+select[name="dropdown"]{
+    border: 1.5px solid;
+    width: 150px;
+    height: 25px;
+    border-radius: 5px;
+    text-align: center;
+}
