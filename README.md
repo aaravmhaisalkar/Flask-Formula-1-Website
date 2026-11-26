@@ -14,7 +14,7 @@ I created this project to teach myself Flask as wel as how to work with API's.
 ## How to Run Locally
 1. Clone or fork this repository:
    ```bash
-   git clone https://github.com/aaravmhaisalkar/State-Game-Project
+   git clone https://github.com/aaravmhaisalkar/Flask-Formula-1-Website
    ```
 2. Install flask:
    ```bash
