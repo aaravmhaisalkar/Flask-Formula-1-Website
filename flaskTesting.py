@@ -2,7 +2,6 @@ from flask import Flask, request, render_template
 from Formula1_API import getFinalStandings
 app = Flask(__name__)
 locations = [
-    "",
     "Melbourne 🇦🇺",
     "Shanghai 🇨🇳",
     "Suzuka 🇯🇵",
@@ -29,22 +28,28 @@ locations = [
     "Yas Marina Circuit 🇦🇪"
 ]
 
+years = [
+    "2025",
+    "2024",
+]
+
 
 @app.route("/", methods=["GET"]) 
 def dropdown():
-    return render_template('main.html', locations=locations)
+    return render_template('main.html', locations=locations, years = years)
 
 @app.route("/submit", methods=["POST"]) 
 def submit():
     if request.method == "POST":
         track = request.form.get('dropdown', type=str)
+        year = request.form.get('dropdown2', type=str)
         if track not in locations:
             return "Invalid Track", 400
         elif track == "":
             return "<h1>Please pick a track, do not leave it blank.</h1>"
         track = track[:-3]
-        standings = getFinalStandings(track)
-        return render_template('table.html',locations=locations, standings=standings, track=track)
+        standings = getFinalStandings(track, year)
+        return render_template('table.html',locations=locations, standings=standings, track=track, years = years, year = year)
 
 if __name__ == "__main__": 
     app.run(debug=True) 

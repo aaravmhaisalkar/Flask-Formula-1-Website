@@ -1,7 +1,7 @@
 import requests
 from tabulate import tabulate
 from rich import print
-def getFinalStandings(location):
+def getFinalStandings(location, year):
     driver_list = {
         43: "Franco Colapinto",
         10: "Pierre Gasly",
@@ -27,8 +27,8 @@ def getFinalStandings(location):
     }
 
     # country = input("What location: ")
-
-    url = f'https://api.openf1.org/v1/sessions?circuit_short_name={location}&session_name=Race&session_type=Race&year=2025'
+    print( location,year)
+    url = f'https://api.openf1.org/v1/sessions?circuit_short_name={location}&session_name=Race&session_type=Race&year={year}'
     response = requests.get(url)
     data = response.json()
     sessionKey = data[0]["session_key"]

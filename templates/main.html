@@ -13,6 +13,11 @@
             <option name="option" value="{{location}}" placeholder="Tracks">{{location}}</option>
             {%endfor%}
         </select>
+        <select name="dropdown2">
+            {%for year in years%}
+            <option name="option" value="{{year}}" placeholder="Year">{{year}}</option>
+            {%endfor%}
+        </select>
         <input type="submit" value="Submit">
     </form>
     {% block content %}
